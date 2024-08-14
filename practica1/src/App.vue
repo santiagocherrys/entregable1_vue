@@ -1,28 +1,37 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Card from "@/components/Card.vue"
+import CardTeam from "@/components/CardTeam.vue"
 
 
 const page = ref('PROFILE');
 
 const cardsTeams = [
-  {title: 'Tittle 1',
-    description: 'Description 1'
+  {title: 'React Developers',
+    description: 'We dont make assumptions about the rest of your technology stack, so you can develop new features in React'
   },
-  {title: 'Tittle 2',
-    description: 'Description 2'
+  {title: 'Vue.js Dev Team',
+    description: 'The development o f Vue and its ecosystem in guided by an international team, some of whom have choosen to be featured below'
   },
-  {title: 'Tittle 3',
-    description: 'Description 3'
+  {title: 'Creative Designers',
+    description: 'A design or product team is more than just the people on it. A team includes the people, the roles they play, and the colaboation they foster'
   },
-  {title: 'Tittle 4',
-    description: 'Description 4'
+  {title: 'Support Team',
+    description: 'Support your team. Your customer support team is fielding the good, the bad, and the ugly day in and day out.'
   },
-  {title: 'Tittle 5',
-    description: 'Description 5'
+  {title: 'Digital Marketing',
+    description: 'Digital marketing refers to advertising delivered through digital channels sunch a search engines, websites, and mobile apps.'
   },
-  {title: 'Tittle 6',
-    description: 'Description 6'
+  {title: 'Event',
+    description: 'Event is defined as a particulr contest which is part of a program of contests. An example of an event is the long jump competition'
+  },
+  {title: 'Figma Resources',
+    description: 'Explore, install, use, and remix thousands of plugins and files published to the Figma Community by designers and developers.'
+  },
+  {title: 'Native Mobile App',
+    description: 'React Native lets you create user friendly native apps and doesnt compromise your users experiences. With its robst framework'
+  },
+  {title: 'Only Beginners',
+    description: 'Learn the basics of how websites work, front-end vs back-end and using a code editor. Learn basic HTML, CSS, and ...'
   }
 ]
 
@@ -47,7 +56,7 @@ const changePage = (newPage: string) =>{
   <div v-if="page == 'TEAM'">
     <h2>Team page</h2>
     <div class="container-cards">
-      <Card
+      <CardTeam
         v-for="iterator in cardsTeams"
         :title="iterator.title"
         :description="iterator.description"
