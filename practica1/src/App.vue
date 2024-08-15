@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import CardTeam from "@/components/CardTeam.vue"
+import CardConnections from "./components/CardConnections.vue";
 
 
 const page = ref('PROFILE');
@@ -70,6 +71,7 @@ const changePage = (newPage: string) =>{
 
   <div v-if="page == 'CONNECTIONS'">
     <h2>Connections page</h2>
+    <CardConnections />
   </div>
 </template>
 
