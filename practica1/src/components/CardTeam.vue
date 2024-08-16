@@ -29,7 +29,7 @@
                 <img src="../assets/images/jeremy.jpg" alt="Person 4">
             </div>
             <div class="container2">
-                <h3 v-for="(item, index) in props.technology" :class="props.color[index]" class="tag">{{item}}{{  }}</h3>
+                <h3 v-for="(item, index) in props.technology" :class="props.color[index]" class="tag">{{item}}</h3>
             </div>
         </div>
     </div>

@@ -72,6 +72,69 @@ const cardsTeams = [
   }
 ]
 
+const cardsConnections = [
+  { image: 'phineas.jpg',
+    name: 'Mark Gilbert',
+    profesion: 'UI Designer',
+    technology: ['Figma', 'Sketch'],
+    color: ['rojo', 'verde'],
+    projects: '18',
+    tasks: '834',
+    connections: '129',
+    connected: '1'
+  },
+  { image: 'candace.jpg',
+    name: 'Eugenia Parsons',
+    profesion: 'Developer',
+    technology: ['Angular', 'React'],
+    color: ['rojo', 'verde'],
+    projects: '112',
+    tasks: '2.31k',
+    connections: '1.28k',
+    connected: '0'
+  },
+  { image: 'ferb.jpg',
+    name: 'Francis Byrd ',
+    profesion: 'Developer',
+    technology: ['HTML', 'React'],
+    color: ['morado', 'verde'],
+    projects: '32',
+    tasks: '1.25k',
+    connections: '890',
+    connected: '0'
+  },
+  { image: 'isabella.jpg',
+    name: 'Leon Lucas',
+    profesion: 'UI/UX Designer',
+    technology: ['Figma', 'Sketch','Photoshop'],
+    color: ['rojo', 'verde', 'morado'],
+    projects: '86',
+    tasks: '12.4k',
+    connections: '890',
+    connected: '0'
+  },
+  { image: 'jeremy.jpg',
+    name: 'Jayden Rogers',
+    profesion: 'Full Stack Developer',
+    technology: ['React', 'HTML', 'Nodejs'],
+    color: ['azul', 'verde'],
+    projects: '244',
+    tasks: '23.8k',
+    connections: '2.14k',
+    connected: '1'
+  },
+  { image: 'amigaCandance.jpg',
+    name: 'Jeanette Powell',
+    profesion: 'SEO',
+    technology: ['analysis', 'Writing'],
+    color: ['azul', 'verde'],
+    projects: '32',
+    tasks: '1.28k',
+    connections: '1.27k',
+    connected: '0'
+  }
+]
+
 const changePage = (newPage: string) =>{
   page.value = newPage;
 }
@@ -110,8 +173,21 @@ const changePage = (newPage: string) =>{
   </div>
 
   <div v-if="page == 'CONNECTIONS'">
-    <h2>Connections page</h2>
-    <CardConnections />
+    <div class="container-cards">
+      <CardConnections  
+      v-for="iterator in cardsConnections"
+      :image="iterator.image"
+      :name="iterator.name"
+      :profesion="iterator.profesion"
+      :technology="iterator.technology"
+      :color="iterator.color" 
+      :projects="iterator.projects"
+      :tasks="iterator.tasks"
+      :connections="iterator.connections"
+      :connected="iterator.connected"
+    />
+    </div>
+    
   </div>
 </template>
 
