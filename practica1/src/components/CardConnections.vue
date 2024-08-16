@@ -2,6 +2,9 @@
     <div class="card">
         <img src="../assets/images/dexter.png" alt="">
     </div>
+    <div class="card">
+        <img src="../assets/images/letter-svgrepo-com.svg" alt="">
+    </div>
     <h2>Desde Conexion</h2>
 
 </template>

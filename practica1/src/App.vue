@@ -7,31 +7,40 @@ import CardConnections from "./components/CardConnections.vue";
 const page = ref('PROFILE');
 
 const cardsTeams = [
-  {title: 'React Developers',
+  { icon: 'react_original_logo_icon_146374.svg',
+    title: 'React Developers',
     description: 'We dont make assumptions about the rest of your technology stack, so you can develop new features in React'
   },
-  {title: 'Vue.js Dev Team',
+  { icon: 'file_type_vue_icon_130078.svg',
+    title: 'Vue.js Dev Team',
     description: 'The development o f Vue and its ecosystem in guided by an international team, some of whom have choosen to be featured below'
   },
-  {title: 'Creative Designers',
+  { icon: 'adobe_xd_alt_macos_bigsur_icon_190423.png',
+    title: 'Creative Designers',
     description: 'A design or product team is more than just the people on it. A team includes the people, the roles they play, and the colaboation they foster'
   },
-  {title: 'Support Team',
+  { icon: 'supportteam_lifeguard_9563.png',
+    title: 'Support Team',
     description: 'Support your team. Your customer support team is fielding the good, the bad, and the ugly day in and day out.'
   },
-  {title: 'Digital Marketing',
+  { icon: 'web-svgrepo-com.svg',
+    title: 'Digital Marketing',
     description: 'Digital marketing refers to advertising delivered through digital channels sunch a search engines, websites, and mobile apps.'
   },
-  {title: 'Event',
+  { icon: 'google_calendar_logo_icon_159345.svg',
+    title: 'Event',
     description: 'Event is defined as a particulr contest which is part of a program of contests. An example of an event is the long jump competition'
   },
-  {title: 'Figma Resources',
+  { icon: 'figma_logo_icon_170157.svg',
+    title: 'Figma Resources',
     description: 'Explore, install, use, and remix thousands of plugins and files published to the Figma Community by designers and developers.'
   },
-  {title: 'Native Mobile App',
+  { icon: 'react_original_logo_icon_146374.svg',
+    title: 'Native Mobile App',
     description: 'React Native lets you create user friendly native apps and doesnt compromise your users experiences. With its robst framework'
   },
-  {title: 'Only Beginners',
+  { icon: 'HTML5_icon-icons.com_67090.svg',
+    title: 'Only Beginners',
     description: 'Learn the basics of how websites work, front-end vs back-end and using a code editor. Learn basic HTML, CSS, and ...'
   }
 ]
@@ -59,6 +68,7 @@ const changePage = (newPage: string) =>{
     <div class="container-cards">
       <CardTeam
         v-for="iterator in cardsTeams"
+        :icon="iterator.icon"
         :title="iterator.title"
         :description="iterator.description"
       />

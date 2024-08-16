@@ -2,17 +2,17 @@
     <div class="card">
         <div class="container">
             <div class="container2">
-                <h3>Hola</h3>
-                <h3>Bonyur</h3>
+                <img :src="getImageUrl()"  alt="">
+                <h4>{{ props.title }}</h4>
+
             </div>
             
             <div class="container2">
-                <h3>Chao</h3>
-                <h3>Adios</h3>
+                <img src="../assets/images/icons/star-svgrepo-com.svg" alt="">
+                <img src="../assets/images/icons/dots-vertical-svgrepo-com.svg" alt="">
             </div>
         </div>
 
-        <h4>{{ props.title }}</h4>
         <p>{{ props.description }}</p>
 
         <div class="container">
@@ -27,12 +27,18 @@
 
 <script setup lang="ts">
 interface IProps{
+    icon: string;
     title: string;
     description: string;
 }
 
 const props = defineProps<IProps>()
 console.log(props)
+
+function getImageUrl() {
+  // This path must be correct for your file
+  return new URL(`../assets/images/icons/${props.icon}`, import.meta.url)
+}
 </script>
 
 <style lang="scss" scoped>
@@ -48,11 +54,22 @@ console.log(props)
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    //padding: 0 10px;
+    //gap: 80px;
 }
 
 .container2{
     display: flex;
     flex-direction: row;
-    gap: 10px
+    gap: 5px
+}
+
+//this is cause the space in the string are generating a \n in the space
+.container2 h4 {
+    white-space: nowrap;
+}
+
+img{
+    width: 20px;
 }
 </style>
